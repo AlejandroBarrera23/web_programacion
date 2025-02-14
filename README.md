@@ -15,10 +15,6 @@
   <img src="https://programoyaprendo.online/blog/wp-content/uploads/2025/02/f2.png" alt="Resultado del juego" width="500" />
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
-  <img src="https://programoyaprendo.online/blog/wp-content/uploads/2025/02/f1.png" alt="Pantalla principal" width="500" />
-  <img src="https://programoyaprendo.online/blog/wp-content/uploads/2025/02/f2.png" alt="Resultado del juego" width="500" />
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
   <img src="https://programoyaprendo.online/blog/wp-content/uploads/2025/02/f3.png" alt="Pantalla principal" width="500" />
   <img src="https://programoyaprendo.online/blog/wp-content/uploads/2025/02/f4.png" alt="Resultado del juego" width="500" />
 </div>
