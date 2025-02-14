@@ -1,0 +1,623 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0A0F1D;
+    color: #EAEAEA;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    background-color: #121826;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    color: #00D4AA;
+    font-family: 'Orbitron', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav a {
+    color: #EAEAEA;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    display: block;
+}
+
+nav a:hover {
+    color: #00D4AA;
+}
+
+/* Submenú */
+.submenu {
+    position: relative;
+}
+
+.submenu .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #1A2238;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    list-style: none;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+.submenu .dropdown li {
+    width: 100%;
+}
+
+.submenu .dropdown li a {
+    padding: 10px 15px;
+    color: #EAEAEA;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.submenu .dropdown li a:hover {
+    background-color: #00D4AA;
+    color: #121826;
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('../assets/hero-image2.jpg') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero h2, .hero p, .hero a {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00D4AA;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    background-color: #00D4AA;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #009E80;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    background-color: #121826;
+    margin-top: 60px;
+    text-align: center;
+    scroll-margin-top: 100px;
+}
+
+section:nth-child(even) {
+    background-color: #0A0F1D;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00D4AA;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Introducción a la Programación */
+.introduccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px 40px;
+    text-align: left;
+}
+
+.intro-img {
+    width: 50%;
+    height: 300px;
+    background: url('../assets/codificacion.png') no-repeat center center/contain;
+    border-radius: 10px;
+}
+
+.intro-text {
+    width: 50%;
+}
+
+/* Cluster Menu (¿Qué quieres aprender hoy?) */
+.menu-galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.menu-item {
+    width: 250px;
+    height: 150px;
+    background-color: #1A2238;
+    color: #EAEAEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #00D4AA;
+    color: #121826;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1A2238;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 90vh; /* Permite que el modal no crezca demasiado */
+    overflow-y: auto; /* Agrega scrollbar si el contenido es extenso */
+    color: white;
+    text-align: left;
+    position: relative;
+}
+
+.modal-content h2, .modal-content h3, .modal-content h4, .modal-content h5 {
+    color: #00D4AA;
+    margin-bottom: 25px; /* Aumentado de 20px a 25px */
+}
+
+.modal-content p, .modal-content ul {
+    font-size: 1rem;
+    line-height: 1.9; /* Aumentado de 1.8 a 1.9 */
+    margin-bottom: 20px; /* Aumentado de 15px a 20px */
+}
+
+.modal-content ul {
+    padding-left: 20px;
+}
+
+.modal-content pre {
+    background-color: #0A0F1D;
+    padding: 18px; /* Aumentado de 15px a 18px */
+    border-radius: 5px;
+    overflow-x: auto;
+    color: #EAEAEA;
+    font-size: 1rem;
+    margin-bottom: 25px; /* Aumentado de 20px a 25px */
+}
+
+
+.modal-content code {
+    font-family: monospace;
+    color: #00D4AA;
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.close:hover {
+    color: #00D4AA;
+}
+
+/* Contact Form */
+.contacto {
+    padding: 80px 20px;
+    background-color: #121826;
+    margin-top: 0px;
+    text-align: center;
+    scroll-margin-top: 100px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #1A2238;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #EAEAEA;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0A0F1D;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: 2px solid #00D4AA;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00D4AA;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #009E80;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+.question p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.test-result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.correct {
+    color: #00D4AA;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: #FF4C4C;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #121826;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Adaptabilidad del Navbar */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .submenu .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .submenu:hover .dropdown {
+        display: block;
+    }
+}
+
+/* Ajustes para el Hero en móviles */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Sección de Introducción - Adaptabilidad */
+@media (max-width: 1024px) {
+    .introduccion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-img {
+        width: 80%;
+        height: auto;
+    }
+
+    .intro-text {
+        width: 100%;
+    }
+}
+
+/* Menú Galería - Ajustes en móviles */
+@media (max-width: 768px) {
+    .menu-galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+}
+
+/* Formularios en pantallas pequeñas */
+@media (max-width: 600px) {
+    .contact-form {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Modales en pantallas pequeñas */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Ajuste general de secciones en móviles */
+@media (max-width: 768px) {
+    section {
+        padding: 50px 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Pie de página responsivo */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos del botón hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #EAEAEA;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Estilos del botón hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #EAEAEA;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/* Navbar en móviles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+        background-color: #1A2238;
+        padding: 15px 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 999;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+}
+
+/* Scrollbar para navegadores basados en WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1A2238; /* Color del fondo del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00D4AA; /* Color de la barra de desplazamiento */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #009E80; /* Color cuando se pasa el cursor */
+}
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: flex-start;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    nav h1 {
+        margin-right: auto; /* Empuja el logo a la izquierda */
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-galeria {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .menu-item {
+        width: 90%; /* Hace que todos los recuadros sean del mismo tamaño */
+        height: 100px; /* Establece una altura uniforme */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1rem;
+    }
+}
